@@ -4,8 +4,9 @@ import commands.HelpCommand;
 import commands.games.TicTacToeCommand;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-public class CommandRouter {
+public class CommandRouter extends ListenerAdapter {
     // Prefix For Bot
     private String prefix = "-";
     private TicTacToeCommand ttt;
