@@ -1,21 +1,16 @@
 package listener;
 
-import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.GenericEvent;
 import net.dv8tion.jda.api.events.ReadyEvent;
 import net.dv8tion.jda.api.events.ShutdownEvent;
-import net.dv8tion.jda.api.events.guild.GuildJoinEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.EventListener;
 import router.CommandRouter;
 
 import javax.annotation.Nonnull;
-import java.util.HashMap;
 
 public class BotListener implements EventListener {
     private CommandRouter router;
-//    private HashMap<String, TextChannel> trackingChannels = new HashMap<>();
 
     @Override
     public void onEvent(@Nonnull GenericEvent genericEvent) {
@@ -26,11 +21,6 @@ public class BotListener implements EventListener {
         if (genericEvent instanceof ShutdownEvent) {
             System.out.println("***** BOT IS OFFLINE *****");
         }
-
-//        if (genericEvent instanceof GuildJoinEvent) {
-//            Guild guild = ((GuildJoinEvent) genericEvent).getGuild();
-//            trackingChannels.put(guild.getId(), guild.getTextChannels().get(0));
-//        }
 
         if (genericEvent instanceof MessageReceivedEvent) {
             // Check if CommandRouter exists already…
