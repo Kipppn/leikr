@@ -4,21 +4,12 @@ import commands.HelpCommand;
 import commands.games.TicTacToeCommand;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-public class CommandRouter extends ListenerAdapter {
+public class CommandRouter {
     // Prefix For Bot
     private String prefix = "-";
     private TicTacToeCommand ttt;
     private HelpCommand helpCommand;
-
-    public String getPrefix() {
-        return prefix;
-    }
-
-    public void setPrefix(String prefix) {
-        this.prefix = prefix;
-    }
 
     /**
      * Handles incoming commands from user
